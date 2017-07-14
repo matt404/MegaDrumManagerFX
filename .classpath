@@ -3,19 +3,13 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="libraries/commons-collections-3.2.1-javadoc.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-collections-3.2.1-sources.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-configuration-1.8-javadoc.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-configuration-1.8-sources.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-configuration-1.8.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-lang-2.6-sources.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-logging-1.1.1-sources.jar"/>
-	<classpathentry kind="lib" path="libraries/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="libraries/mmj.jar">
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mmj.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="MegaDrumManagerFX/libraries"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="MegaDrumManagerFX/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>

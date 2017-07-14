@@ -163,7 +163,7 @@ public class Controller implements MidiRescanEventListener {
 			e.consume();
 			closeProgram();
 		});
-		imageWindowIcon = new Image("/icon_256x256.png");
+		//imageWindowIcon = new Image("icon_256x256.png");
 		
 		fileManager = new FileManager(window);
 		uiGlobal = new UIGlobal();
@@ -500,7 +500,7 @@ public class Controller implements MidiRescanEventListener {
 	public void respondToResize(Scene sc) {
 		//Have to re-add window icon, otherwise it gets corrupted on resize 
 		window.getIcons().clear();
-		window.getIcons().add(imageWindowIcon);
+		//window.getIcons().add(imageWindowIcon);
 		
 		uiGlobalMisc.respondToResize(sc.getHeight()*0.05);
 		Double mainMenuBarHeight = mainMenuBar.getHeight();
