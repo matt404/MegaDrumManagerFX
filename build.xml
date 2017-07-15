@@ -13,6 +13,16 @@
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
 
+    <path id="MegaDrumManagerFX.classpath">
+        <pathelement location="bin"/>
+        <path refid="JavaFX SDK.libraryclasspath"/>
+        <pathelement location="lib/commons-collections-3.2.1.jar"/>
+        <pathelement location="lib/commons-configuration-1.8.jar"/>
+        <pathelement location="lib/commons-lang-2.6.jar"/>
+        <pathelement location="lib/commons-logging-1.1.1.jar"/>
+        <pathelement location="lib/mmj.jar"/>
+    </path>
+
     <!-- ivy start -->
     <!-- ivy to get dependencies and copy to project lib folder automatically -->
     <target name="resolve" description="retrieve dependencies with ivy">
