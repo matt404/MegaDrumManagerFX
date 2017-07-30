@@ -51,6 +51,9 @@
     <target name="compile" depends="init" description="compile the source ">
         <javac includeantruntime="false" srcdir="${src.dir}"
                destdir="${build.dir}" classpathref="classpath" />
+        <copy todir="${build.dir}/info/megadrum/managerfx">
+            <fileset file="${src.dir}/info/megadrum/managerfx/application.css"/>
+        </copy>
         <copy todir="${build.dir}">
             <fileset file="${src.dir}/icon_256x256.png"/>
         </copy>
