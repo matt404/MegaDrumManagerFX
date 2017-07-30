@@ -163,7 +163,7 @@ public class Controller implements MidiRescanEventListener {
 			e.consume();
 			closeProgram();
 		});
-		//imageWindowIcon = new Image("icon_256x256.png");
+		imageWindowIcon = new Image("/icon_256x256.png");
 		
 		fileManager = new FileManager(window);
 		uiGlobal = new UIGlobal();
