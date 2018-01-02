@@ -2085,7 +2085,7 @@ public class Controller implements MidiRescanEventListener {
 					id = 0;
 				}
 				if (configFull.configMisc.send_triggered_in) {
-					//controlsPads.switchAndShowPad(id);
+					switchToSelectedPair(id);
 				}
 			}
 			break;
@@ -2607,11 +2607,12 @@ public class Controller implements MidiRescanEventListener {
 	
 	private void load_all() {
 		configOptions.lastConfig = uiGlobal.getComboBoxFile().getSelectionModel().getSelectedIndex();
-		fileManager.load_all(fullConfigs[configOptions.lastConfig], configOptions);
-		uiGlobal.getComboBoxFile().getItems().clear();
-		uiGlobal.getComboBoxFile().getItems().addAll(configOptions.configFileNames);
-		uiGlobal.getComboBoxFile().getSelectionModel().select(configOptions.lastConfig);
-		loadAllFromConfigFull();
+		if (fileManager.load_all(fullConfigs[configOptions.lastConfig], configOptions)) {
+			uiGlobal.getComboBoxFile().getItems().clear();
+			uiGlobal.getComboBoxFile().getItems().addAll(configOptions.configFileNames);
+			uiGlobal.getComboBoxFile().getSelectionModel().select(configOptions.lastConfig);
+			loadAllFromConfigFull();
+		}
 	}
 
 	private void loadSysexMisc() {
@@ -2712,7 +2713,8 @@ public class Controller implements MidiRescanEventListener {
 			sysex = configFull.configPads[0].getSysexFromConfig();
 			System.arraycopy(sysex, 0, sysexPad, 0, sysex.length);
 			sysexPos = configFull.configPos[0].getSysexFromConfig();
-			System.arraycopy(sysex, 0, sysexPad, Constants.MD_SYSEX_PAD_SIZE, sysex.length);
+			//System.arraycopy(sysex, 0, sysexPad, Constants.MD_SYSEX_PAD_SIZE, sysex.length);
+			System.arraycopy(sysex, 0, sysexPad, 0, sysex.length);
 			fileManager.saveSysex(sysexPad, configOptions);
 		}
 	}
@@ -2752,10 +2754,11 @@ public class Controller implements MidiRescanEventListener {
 		
 	private void save_all() {
 		configOptions.lastConfig = uiGlobal.getComboBoxFile().getSelectionModel().getSelectedIndex();
-		fileManager.save_all(configFull, configOptions);
-		uiGlobal.getComboBoxFile().getItems().clear();
-		uiGlobal.getComboBoxFile().getItems().addAll(configOptions.configFileNames);
-		uiGlobal.getComboBoxFile().getSelectionModel().select(configOptions.lastConfig);
+		if (fileManager.save_all(configFull, configOptions)) {
+			uiGlobal.getComboBoxFile().getItems().clear();
+			uiGlobal.getComboBoxFile().getItems().addAll(configOptions.configFileNames);
+			uiGlobal.getComboBoxFile().getSelectionModel().select(configOptions.lastConfig);
+		}
 	}	
 
 	private void addCustomNamesToPads() {
